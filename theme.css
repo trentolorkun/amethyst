@@ -2471,3 +2471,75 @@ body.code-styler .code-styler-header-container .code-styler-header-language-tag 
 body.code-styler .code-styler-header-container div:has(> img.code-styler-icon) + .code-styler-header-language-tag {
   padding-left: 0;
 }
+
+/* ─────────────────────────────────────────
+   ALERTAS ESTILO GITHUB — > [!NOTE] / [!TIP] / [!IMPORTANT] / [!WARNING] / [!CAUTION]
+   Obsidian ya las reconoce como callouts; aquí les damos colores,
+   iconos (los de GitHub) y el aspecto de GitHub: borde izquierdo y sin caja.
+   ───────────────────────────────────────── */
+body {
+  --to-alert-note: var(--to-sky-rgb);          /* azul cielo Amethyst */
+  --to-alert-tip: 63, 185, 80;                 /* verde GitHub (oscuro) */
+  --to-alert-important: var(--to-purple-rgb);  /* morado Amethyst */
+  --to-alert-warning: var(--to-yellow-rgb);    /* amarillo Amethyst */
+  --to-alert-caution: 248, 81, 73;             /* rojo GitHub (oscuro) */
+  --to-alert-fade-start: 80%;                  /* dónde empieza a desvanecerse el fondo */
+}
+
+.theme-light {
+  --to-alert-tip: 26, 127, 55;                 /* verde GitHub (claro) */
+  --to-alert-caution: 209, 36, 47;             /* rojo GitHub (claro) */
+}
+
+body .callout[data-callout="note"] {
+  --callout-color: var(--to-alert-note);
+  --callout-icon: lucide-info;
+}
+body .callout[data-callout="tip"] {
+  --callout-color: var(--to-alert-tip);
+  --callout-icon: lucide-lightbulb;
+}
+body .callout[data-callout="important"] {
+  --callout-color: var(--to-alert-important);
+  --callout-icon: lucide-message-square-warning;
+}
+body .callout[data-callout="warning"] {
+  --callout-color: var(--to-alert-warning);
+  --callout-icon: lucide-alert-triangle;
+}
+body .callout[data-callout="caution"] {
+  --callout-color: var(--to-alert-caution);
+  --callout-icon: lucide-alert-octagon;
+}
+
+body .callout:is(
+    [data-callout="note"], [data-callout="tip"], [data-callout="important"],
+    [data-callout="warning"], [data-callout="caution"]
+  ) {
+  border: none;
+  border-left: 3px solid rgb(var(--callout-color));
+  border-radius: 0 5px 5px 0;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--callout-color), 0.10) 0%,
+    rgba(var(--callout-color), 0.10) var(--to-alert-fade-start),
+    transparent 100%
+  );
+}
+
+/* ─────────────────────────────────────────
+   VISTA PREVIA DE COLORES — `#0969DA`, `rgb(…)`, `hsl(…)`
+   El plugin "Amethyst Color Preview" marca el código con .amethyst-color-code
+   y --amethyst-swatch; aquí se dibuja el cuadrado.
+   ───────────────────────────────────────── */
+.amethyst-color-code::after {
+  content: "";
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  margin-left: 0.35em;
+  border-radius: 0.2em;
+  border: 1px solid rgba(128, 128, 128, 0.45);
+  background-color: var(--amethyst-swatch);
+  vertical-align: -0.05em;
+}
