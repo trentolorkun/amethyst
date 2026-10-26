@@ -2089,6 +2089,11 @@ mark strong,
 .cm-highlight.cm-strong,
 strong kbd {
   -webkit-text-fill-color: currentColor !important;
+}
+
+/* (en el editor, .cm-highlight.cm-strong conserva el degradado del resaltado) */
+mark strong,
+strong kbd {
   background-image: none !important;
 }
 
@@ -2234,11 +2239,54 @@ s:hover,
 }
 
 /* ─────────────────────────────────────────
-   RESALTADO ==texto== — morado
+   RESALTADO ==texto== — "fancy highlight" con degradado
+   Subrayado sólido de 2px + relleno que se desvanece hacia arriba.
+   Por defecto morado; ==🔴== ==🟠== ==🟡== ==🟢== ==🔵== ==🟣== usan su color.
    ───────────────────────────────────────── */
+.theme-dark {
+  --text-highlight-bg: rgba(var(--to-purple-rgb), 0.28);  /* usado por búsqueda, etc. */
+}
+
+body {
+  --to-hl-strong: 38%;   /* opacidad del relleno junto al subrayado */
+  --to-hl-faint: 8%;     /* opacidad del relleno en la parte de arriba */
+}
+
+/* Color de cada variante */
+.markdown-rendered mark,
+.cm-s-obsidian span.cm-highlight,
+.cm-s-obsidian span.cm-formatting-highlight { --to-hl: var(--to-purple); }
+
+.markdown-rendered mark[data-highlight="red"],
+.cm-s-obsidian span.cm-highlight-red { --to-hl: var(--color-red); }
+.markdown-rendered mark[data-highlight="orange"],
+.cm-s-obsidian span.cm-highlight-orange { --to-hl: var(--color-orange); }
+.markdown-rendered mark[data-highlight="yellow"],
+.cm-s-obsidian span.cm-highlight-yellow { --to-hl: var(--to-yellow); }   /* tono Amethyst */
+.markdown-rendered mark[data-highlight="green"],
+.cm-s-obsidian span.cm-highlight-green { --to-hl: var(--color-green); }
+.markdown-rendered mark[data-highlight="blue"],
+.cm-s-obsidian span.cm-highlight-blue { --to-hl: var(--to-sky); }        /* tono Amethyst */
+.markdown-rendered mark[data-highlight="purple"],
+.cm-s-obsidian span.cm-highlight-purple { --to-hl: var(--to-purple); }   /* tono Amethyst */
+
+/* El degradado */
+body .markdown-rendered mark,
+body .cm-s-obsidian span.cm-highlight,
+body .cm-s-obsidian span.cm-formatting-highlight {
+  background-color: transparent;
+  background-image: linear-gradient(
+    0deg,
+    var(--to-hl) 0,
+    var(--to-hl) 2px,
+    color-mix(in oklch, var(--to-hl) var(--to-hl-strong), transparent) 2px,
+    color-mix(in oklch, var(--to-hl) var(--to-hl-faint), transparent) 100%
+  );
+  border-radius: 2px 2px 0 0;
+}
+
 .theme-dark .markdown-rendered mark,
 .theme-dark .cm-s-obsidian span.cm-highlight {
-  background-color: rgba(var(--to-purple-rgb), 0.28);
   color: #fff;
 }
 
