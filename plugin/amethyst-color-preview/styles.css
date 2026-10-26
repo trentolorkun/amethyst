@@ -1,0 +1,12 @@
+/* Estilo básico del cuadrado (el tema Amethyst lo define igual; esto es por si se usa con otro tema) */
+.amethyst-color-code::after {
+  content: "";
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  margin-left: 0.35em;
+  border-radius: 0.2em;
+  border: 1px solid rgba(128, 128, 128, 0.45);
+  background-color: var(--amethyst-swatch);
+  vertical-align: -0.05em;
+}

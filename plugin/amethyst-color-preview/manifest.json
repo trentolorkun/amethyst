@@ -1,0 +1,9 @@
+{
+  "id": "amethyst-color-preview",
+  "name": "Amethyst Color Preview",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Muestra un cuadrado con el color junto a `#RRGGBB`, `rgb(…)` y `hsl(…)` escritos como código en línea, como en GitHub.",
+  "author": "Jorge Fraga Neiro",
+  "isDesktopOnly": false
+}
