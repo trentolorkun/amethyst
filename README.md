@@ -25,6 +25,8 @@ A personal theme for [Obsidian](https://obsidian.md): the clean base and special
 - **Code comments** in green.
 - **Tabs**: the active one in white, the rest in grey.
 - Tweaks for the **Code Styler** plugin: small language icon and language tag without background.
+- **GitHub-style alerts** (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`) — see [below](#alerts-en).
+- **Colour preview** for `#RRGGBB`, `rgb(…)` and `hsl(…)` in inline code, with the companion plugin — see [below](#color-preview-en).
 
 <a id="checkboxes-en"></a>
 
@@ -57,6 +59,38 @@ A personal theme for [Obsidian](https://obsidian.md): the clean base and special
 | `- [P]` | Open pull request | PR icon (green) |
 | `- [M]` | Merged pull request | merge icon (purple) |
 | `- [D]` | Draft pull request | draft PR icon (grey) |
+
+<a id="alerts-en"></a>
+
+### GitHub-style alerts
+
+Written exactly as on GitHub. Obsidian already recognises them as callouts; Amethyst gives them GitHub's icons and look (coloured left border and a soft background that fades out on the right).
+
+```markdown
+> [!WARNING]
+> Alert text.
+```
+
+| Alert | Colour | Icon |
+|---|---|---|
+| `[!NOTE]` | Amethyst sky blue | information |
+| `[!TIP]` | GitHub green (`#3fb950`; `#1a7f37` in light mode) | light bulb |
+| `[!IMPORTANT]` | Amethyst purple | speech bubble with ! |
+| `[!WARNING]` | Amethyst yellow | warning triangle |
+| `[!CAUTION]` | GitHub red (`#f85149`; `#d1242f` in light mode) | stop octagon |
+
+<a id="color-preview-en"></a>
+
+### Colour preview (companion plugin)
+
+As on GitHub, inline code that contains only a colour shows a small square with that colour: `#0969DA`, `rgb(9, 105, 218)`, `hsl(212, 92%, 45%)` (also `rgba`/`hsla` and 3–8 digit hex). It works in reading view, Live Preview (tables included) and Source mode.
+
+A theme can only style existing content, so this part is a small plugin, **Amethyst Color Preview**, included in this repo under `plugin/amethyst-color-preview/`. To install it:
+
+1. Copy the `plugin/amethyst-color-preview` folder into `<your-vault>/.obsidian/plugins/`.
+2. Enable it in **Settings → Community plugins**.
+
+The square is drawn by the theme; the plugin also ships its own `styles.css`, so it works with other themes too.
 
 ### Installation
 
@@ -112,6 +146,8 @@ Tema personal para [Obsidian](https://obsidian.md): la base estéticamente limpi
 - **Comentarios** de código en verde.
 - **Pestañas**: la activa en blanco, el resto en gris.
 - Ajustes para el plugin **Code Styler**: icono de lenguaje pequeño y etiqueta sin fondo.
+- **Alertas estilo GitHub** (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`) — ver [más abajo](#alerts-es).
+- **Vista previa de colores** para `#RRGGBB`, `rgb(…)` y `hsl(…)` en código en línea, con el plugin complementario — ver [más abajo](#color-preview-es).
 
 <a id="checkboxes-es"></a>
 
@@ -144,6 +180,38 @@ Tema personal para [Obsidian](https://obsidian.md): la base estéticamente limpi
 | `- [P]` | Pull request abierta | icono de PR (verde) |
 | `- [M]` | Pull request mergeada | icono de merge (morado) |
 | `- [D]` | Pull request en borrador | icono de PR borrador (gris) |
+
+<a id="alerts-es"></a>
+
+### Alertas estilo GitHub
+
+Se escriben igual que en GitHub. Obsidian ya las reconoce como callouts; Amethyst les da los iconos y el aspecto de GitHub (borde izquierdo de color y fondo suave que se desvanece a la derecha).
+
+```markdown
+> [!WARNING]
+> Texto de la alerta.
+```
+
+| Alerta | Color | Icono |
+|---|---|---|
+| `[!NOTE]` | azul cielo Amethyst | información |
+| `[!TIP]` | verde GitHub (`#3fb950`; `#1a7f37` en modo claro) | bombilla |
+| `[!IMPORTANT]` | morado Amethyst | bocadillo con ! |
+| `[!WARNING]` | amarillo Amethyst | triángulo de aviso |
+| `[!CAUTION]` | rojo GitHub (`#f85149`; `#d1242f` en modo claro) | octógono de stop |
+
+<a id="color-preview-es"></a>
+
+### Vista previa de colores (plugin complementario)
+
+Como en GitHub, un código en línea que contenga solo un color muestra un pequeño cuadrado con ese color: `#0969DA`, `rgb(9, 105, 218)`, `hsl(212, 92%, 45%)` (también `rgba`/`hsla` y hex de 3 a 8 dígitos). Funciona en modo lectura, en Live Preview (tablas incluidas) y en modo Source.
+
+Un tema solo puede dar estilo a lo que ya existe, así que esta parte es un pequeño plugin, **Amethyst Color Preview**, incluido en este repo en `plugin/amethyst-color-preview/`. Para instalarlo:
+
+1. Copia la carpeta `plugin/amethyst-color-preview` en `<tu-vault>/.obsidian/plugins/`.
+2. Actívalo en **Ajustes → Plugins de la comunidad**.
+
+El cuadrado lo dibuja el tema; el plugin trae también su propio `styles.css`, así que funciona con otros temas.
 
 ### Instalación
 
@@ -199,6 +267,8 @@ Tema persoal para [Obsidian](https://obsidian.md): a base estéticamente limpa e
 - **Comentarios** de código en verde.
 - **Lapelas**: a activa en branco, o resto en gris.
 - Axustes para o complemento **Code Styler**: icona de linguaxe pequena e etiqueta sen fondo.
+- **Alertas estilo GitHub** (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`) — ver [máis abaixo](#alerts-gl).
+- **Vista previa de cores** para `#RRGGBB`, `rgb(…)` e `hsl(…)` en código en liña, co complemento adicional — ver [máis abaixo](#color-preview-gl).
 
 <a id="checkboxes-gl"></a>
 
@@ -231,6 +301,38 @@ Tema persoal para [Obsidian](https://obsidian.md): a base estéticamente limpa e
 | `- [P]` | Pull request aberta | icona de PR (verde) |
 | `- [M]` | Pull request fusionada | icona de merge (morado) |
 | `- [D]` | Pull request en borrador | icona de PR borrador (gris) |
+
+<a id="alerts-gl"></a>
+
+### Alertas estilo GitHub
+
+Escríbense igual que en GitHub. Obsidian xa as recoñece como callouts; Amethyst dálles as iconas e o aspecto de GitHub (bordo esquerdo de cor e fondo suave que se esvaece á dereita).
+
+```markdown
+> [!WARNING]
+> Texto da alerta.
+```
+
+| Alerta | Cor | Icona |
+|---|---|---|
+| `[!NOTE]` | azul ceo Amethyst | información |
+| `[!TIP]` | verde GitHub (`#3fb950`; `#1a7f37` en modo claro) | lámpada |
+| `[!IMPORTANT]` | morado Amethyst | globo de diálogo con ! |
+| `[!WARNING]` | amarelo Amethyst | triángulo de aviso |
+| `[!CAUTION]` | vermello GitHub (`#f85149`; `#d1242f` en modo claro) | octógono de stop |
+
+<a id="color-preview-gl"></a>
+
+### Vista previa de cores (complemento adicional)
+
+Como en GitHub, un código en liña que conteña só unha cor mostra un pequeno cadrado con esa cor: `#0969DA`, `rgb(9, 105, 218)`, `hsl(212, 92%, 45%)` (tamén `rgba`/`hsla` e hex de 3 a 8 díxitos). Funciona no modo lectura, en Live Preview (táboas incluídas) e no modo Source.
+
+Un tema só pode dar estilo ao que xa existe, así que esta parte é un pequeno complemento, **Amethyst Color Preview**, incluído neste repositorio en `plugin/amethyst-color-preview/`. Para instalalo:
+
+1. Copia o cartafol `plugin/amethyst-color-preview` en `<o-teu-vault>/.obsidian/plugins/`.
+2. Actívao en **Axustes → Complementos da comunidade**.
+
+O cadrado debúxao o tema; o complemento trae tamén o seu propio `styles.css`, así que funciona con outros temas.
 
 ### Instalación
 
