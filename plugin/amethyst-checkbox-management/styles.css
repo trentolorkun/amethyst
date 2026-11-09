@@ -1,0 +1,56 @@
+/* Checkbox de muestra (menú y ajustes): lo dibuja el propio tema con sus reglas de [data-task] */
+.amethyst-cbm-preview.task-list-item-checkbox {
+  margin: 0 !important;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* ── Ajustes ── */
+.amethyst-cbm-row .setting-item-name {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+.amethyst-cbm-row.setting-item {
+  padding: 0.45em 0;
+}
+.amethyst-cbm-char {
+  color: var(--text-muted);
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-smaller);
+}
+.amethyst-cbm-hidden .setting-item-name {
+  opacity: 0.4;
+}
+.amethyst-cbm-separator .setting-item-name {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+.amethyst-cbm-separator-line {
+  flex: 1;
+  min-width: 3em;
+  border-top: 1px dashed var(--text-faint);
+}
+.amethyst-cbm-folder .setting-item-name {
+  font-weight: var(--font-semibold);
+}
+.amethyst-cbm-folder-name {
+  font-weight: inherit;
+  max-width: 16em;
+}
+.amethyst-cbm-folder-items {
+  margin-left: 0.6em;
+  padding-left: 1.4em;
+  border-left: 2px solid var(--background-modifier-border);
+}
+.amethyst-cbm-empty {
+  color: var(--text-faint);
+  font-size: var(--font-ui-smaller);
+  padding: 0.4em 0 0.8em;
+}
+
+/* Emoji de carpeta en el menú contextual */
+.amethyst-cbm-folder-emoji {
+  font-size: 1em;
+  line-height: 1;
+}
