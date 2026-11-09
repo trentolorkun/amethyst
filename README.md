@@ -27,6 +27,7 @@ A personal theme for [Obsidian](https://obsidian.md): the clean base and special
 - Tweaks for the **Code Styler** plugin: small language icon and language tag without background.
 - **GitHub-style alerts** (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`) — see [below](#alerts-en).
 - **Colour preview** for `#RRGGBB`, `rgb(…)` and `hsl(…)` in inline code, with the companion plugin — see [below](#color-preview-en).
+- **Checkbox management**: right-click menu with every checkbox state (configurable groups, folders and order) and a configurable click cycle, with a second companion plugin — see [below](#checkbox-menu-en).
 
 <a id="checkboxes-en"></a>
 
@@ -36,7 +37,8 @@ A personal theme for [Obsidian](https://obsidian.md): the clean base and special
 |---|---|---|
 | `- [ ]` | To do | empty box |
 | `- [x]` | Done | check (struck through in grey) |
-| `- [/]` | In progress | half-filled box |
+| `- [v]` | Reviewed | double check in sky blue, no box (text struck through in grey) |
+| `- [/]` | In progress | half-filled box (purple) |
 | `- [-]` | Cancelled | dash (struck through in grey) |
 | `- [>]` | Forwarded | paper plane (grey) |
 | `- [<]` | Scheduled | calendar (grey) |
@@ -91,6 +93,28 @@ A theme can only style existing content, so this part is a small plugin, **Ameth
 2. Enable it in **Settings → Community plugins**.
 
 The square is drawn by the theme; the plugin also ships its own `styles.css`, so it works with other themes too.
+
+<a id="checkbox-menu-en"></a>
+
+### Checkbox management (companion plugin)
+
+A second small plugin, **Amethyst Checkbox Management**, under `plugin/amethyst-checkbox-management/`. Install it the same way: copy the folder into `<your-vault>/.obsidian/plugins/` and enable it in **Settings → Community plugins**. Its labels and settings are in Spanish. It works in Live Preview and reading view.
+
+- **Right-click** a checkbox to switch it to any of the [states above](#checkboxes-en). Each option shows the checkbox exactly as the theme draws it, and the current state is ticked.
+- **Left-click** follows a cycle you choose in the plugin settings. From the last state it goes back to To do; states outside the cycle behave as usual in Obsidian.
+  - To do → Done *(Obsidian's default)*
+  - To do → In progress → Done
+  - To do → Done → Reviewed
+  - To do → In progress → Done → Reviewed
+
+In the plugin settings you can arrange the right-click menu however you like:
+
+- **Order**: move each state up or down.
+- **Separators**: add, move and remove them, in the main menu or inside a folder.
+- **Folders (submenus)**: create, rename and remove them, and move states into them with the *Ubicación* dropdown. A removed folder puts its states back in the main menu.
+- **Hide** states you don't use (eye icon).
+
+By default the menu has the basic states (to do, in progress, done, reviewed, cancelled), then forwarded and scheduled, and three folders: *Etiquetas*, *Valoración* and *Git* (the pull request states). *Restablecer* brings that layout back.
 
 ### Installation
 
@@ -148,6 +172,7 @@ Tema personal para [Obsidian](https://obsidian.md): la base estéticamente limpi
 - Ajustes para el plugin **Code Styler**: icono de lenguaje pequeño y etiqueta sin fondo.
 - **Alertas estilo GitHub** (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`) — ver [más abajo](#alerts-es).
 - **Vista previa de colores** para `#RRGGBB`, `rgb(…)` y `hsl(…)` en código en línea, con el plugin complementario — ver [más abajo](#color-preview-es).
+- **Gestión de checkboxes**: menú de clic derecho con todos los estados (grupos, carpetas y orden configurables) y ciclo de clics configurable, con un segundo plugin complementario — ver [más abajo](#checkbox-menu-es).
 
 <a id="checkboxes-es"></a>
 
@@ -157,7 +182,8 @@ Tema personal para [Obsidian](https://obsidian.md): la base estéticamente limpi
 |---|---|---|
 | `- [ ]` | Pendiente | casilla vacía |
 | `- [x]` | Hecho | check (tachado en gris) |
-| `- [/]` | En curso | casilla a medio rellenar |
+| `- [v]` | Revisado | doble check azul cielo, sin caja (texto tachado en gris) |
+| `- [/]` | En curso | casilla a medio rellenar (morado) |
 | `- [-]` | Cancelado | guion (tachado en gris) |
 | `- [>]` | Reenviado | avión de papel (gris) |
 | `- [<]` | Programado | calendario (gris) |
@@ -212,6 +238,28 @@ Un tema solo puede dar estilo a lo que ya existe, así que esta parte es un pequ
 2. Actívalo en **Ajustes → Plugins de la comunidad**.
 
 El cuadrado lo dibuja el tema; el plugin trae también su propio `styles.css`, así que funciona con otros temas.
+
+<a id="checkbox-menu-es"></a>
+
+### Gestión de checkboxes (plugin complementario)
+
+Un segundo plugin pequeño, **Amethyst Checkbox Management**, en `plugin/amethyst-checkbox-management/`. Se instala igual: copia la carpeta en `<tu-vault>/.obsidian/plugins/` y actívalo en **Ajustes → Plugins de la comunidad**. Funciona en Live Preview y en modo lectura.
+
+- **Clic derecho** sobre un checkbox para cambiarlo a cualquiera de los [estados de arriba](#checkboxes-es). Cada opción muestra el checkbox tal y como lo dibuja el tema, y el estado actual aparece marcado.
+- **Clic izquierdo**: sigue el ciclo que elijas en los ajustes del plugin. Desde el último estado se vuelve a Pendiente; los estados que no están en el ciclo se comportan como siempre en Obsidian.
+  - Pendiente → Hecho *(lo normal en Obsidian)*
+  - Pendiente → En curso → Hecho
+  - Pendiente → Hecho → Revisado
+  - Pendiente → En curso → Hecho → Revisado
+
+En los ajustes del plugin puedes organizar el menú del clic derecho como quieras:
+
+- **Orden**: sube o baja cada estado.
+- **Separadores**: añádelos, muévelos y quítalos, en el menú principal o dentro de una carpeta.
+- **Carpetas (submenús)**: créalas, renómbralas y quítalas, y mete estados en ellas con el desplegable *Ubicación*. Al quitar una carpeta, sus estados vuelven al menú principal.
+- **Oculta** los estados que no uses (icono del ojo).
+
+Por defecto el menú tiene los estados básicos (pendiente, en curso, hecho, revisado, cancelado), después reenviado y programado, y tres carpetas: *Etiquetas*, *Valoración* y *Git* (los estados de pull requests). *Restablecer* vuelve a esa distribución.
 
 ### Instalación
 
@@ -269,6 +317,7 @@ Tema persoal para [Obsidian](https://obsidian.md): a base estéticamente limpa e
 - Axustes para o complemento **Code Styler**: icona de linguaxe pequena e etiqueta sen fondo.
 - **Alertas estilo GitHub** (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`) — ver [máis abaixo](#alerts-gl).
 - **Vista previa de cores** para `#RRGGBB`, `rgb(…)` e `hsl(…)` en código en liña, co complemento adicional — ver [máis abaixo](#color-preview-gl).
+- **Xestión de caixas de verificación**: menú de clic dereito con todos os estados (grupos, cartafoles e orde configurables) e ciclo de clics configurable, cun segundo complemento adicional — ver [máis abaixo](#checkbox-menu-gl).
 
 <a id="checkboxes-gl"></a>
 
@@ -278,7 +327,8 @@ Tema persoal para [Obsidian](https://obsidian.md): a base estéticamente limpa e
 |---|---|---|
 | `- [ ]` | Pendente | caixa baleira |
 | `- [x]` | Feito | visto (riscado en gris) |
-| `- [/]` | En curso | caixa medio enchida |
+| `- [v]` | Revisado | dobre visto azul ceo, sen caixa (texto riscado en gris) |
+| `- [/]` | En curso | caixa medio enchida (morado) |
 | `- [-]` | Cancelado | guión (riscado en gris) |
 | `- [>]` | Reenviado | avión de papel (gris) |
 | `- [<]` | Programado | calendario (gris) |
@@ -333,6 +383,28 @@ Un tema só pode dar estilo ao que xa existe, así que esta parte é un pequeno 
 2. Actívao en **Axustes → Complementos da comunidade**.
 
 O cadrado debúxao o tema; o complemento trae tamén o seu propio `styles.css`, así que funciona con outros temas.
+
+<a id="checkbox-menu-gl"></a>
+
+### Xestión de caixas de verificación (complemento adicional)
+
+Un segundo complemento pequeno, **Amethyst Checkbox Management**, en `plugin/amethyst-checkbox-management/`. Instálase igual: copia o cartafol en `<o-teu-vault>/.obsidian/plugins/` e actívao en **Axustes → Complementos da comunidade**. As etiquetas e os axustes están en castelán. Funciona en Live Preview e no modo lectura.
+
+- **Clic dereito** sobre unha caixa para cambiala a calquera dos [estados de arriba](#checkboxes-gl). Cada opción mostra a caixa tal e como a debuxa o tema, e o estado actual aparece marcado.
+- **Clic esquerdo**: segue o ciclo que escollas nos axustes do complemento. Desde o último estado vólvese a Pendente; os estados que non están no ciclo compórtanse como sempre en Obsidian.
+  - Pendente → Feito *(o normal en Obsidian)*
+  - Pendente → En curso → Feito
+  - Pendente → Feito → Revisado
+  - Pendente → En curso → Feito → Revisado
+
+Nos axustes do complemento podes organizar o menú do clic dereito como queiras:
+
+- **Orde**: sobe ou baixa cada estado.
+- **Separadores**: engádeos, móveos e quítaos, no menú principal ou dentro dun cartafol.
+- **Cartafoles (submenús)**: créaos, renoméaos e quítaos, e mete estados neles co despregable *Ubicación*. Ao quitar un cartafol, os seus estados volven ao menú principal.
+- **Oculta** os estados que non uses (icona do ollo).
+
+Por defecto o menú ten os estados básicos (pendente, en curso, feito, revisado, cancelado), despois reenviado e programado, e tres cartafoles: *Etiquetas*, *Valoración* e *Git* (os estados de pull requests). *Restablecer* volve a esa distribución.
 
 ### Instalación
 
