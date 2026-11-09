@@ -2068,6 +2068,14 @@ body .markdown-source-view .HyperMD-header:is(
 }
 
 /* ─────────────────────────────────────────
+   CHECKBOXES — mismo morado que los H2
+   ───────────────────────────────────────── */
+body {
+  --checkbox-color: var(--h2-color);
+  --checkbox-color-hover: var(--h2-color);
+}
+
+/* ─────────────────────────────────────────
    NEGRITA — texto con degradado cielo → lila
    ───────────────────────────────────────── */
 body:not(.default-font-color) strong,
