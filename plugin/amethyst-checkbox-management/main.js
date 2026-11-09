@@ -163,6 +163,18 @@ function setItemIcon(item, node) {
   iconEl.replaceChildren(node);
 }
 
+// Obsidian reutiliza el <input> del checkbox al cambiar la línea, así que lo
+// actualizamos a mano para que su dibujo coincida siempre con el nuevo estado.
+function syncCheckbox(input, ch) {
+  input.checked = ch !== " ";
+  input.setAttribute("data-task", ch);
+  const li = input.closest("li.task-list-item");
+  if (li) {
+    li.setAttribute("data-task", ch);
+    li.classList.toggle("is-checked", ch !== " ");
+  }
+}
+
 /* ───────────── Plugin ───────────── */
 
 module.exports = class AmethystCheckboxManagement extends Plugin {
@@ -201,7 +213,14 @@ module.exports = class AmethystCheckboxManagement extends Plugin {
   resolveTask(target) {
     if (!(target instanceof HTMLInputElement)) return null;
     if (!target.matches(".task-list-item-checkbox") || target.closest(".menu, .modal")) return null;
-    return target.amethystCbm ? this.fromReadingView(target) : this.fromEditor(target);
+    const task = target.amethystCbm ? this.fromReadingView(target) : this.fromEditor(target);
+    if (!task) return null;
+    const apply = task.apply;
+    task.apply = (ch) => {
+      apply(ch);
+      syncCheckbox(target, ch);
+    };
+    return task;
   }
 
   // Live Preview: el checkbox es un widget de CodeMirror
@@ -265,7 +284,11 @@ module.exports = class AmethystCheckboxManagement extends Plugin {
 
     evt.preventDefault();
     evt.stopImmediatePropagation();
-    if (isClick) task.apply(cycle[(index + 1) % cycle.length]);
+    if (!isClick) return;
+    // Tras cancelar el clic, el navegador devuelve el checkbox a su estado anterior
+    // al terminar el evento: aplicamos el cambio después, para que no lo pise.
+    const next = cycle[(index + 1) % cycle.length];
+    setTimeout(() => task.apply(next), 0);
   }
 
   /* ── Clic derecho: menú de estados ── */
