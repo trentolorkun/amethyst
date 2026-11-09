@@ -38,7 +38,7 @@ A personal theme for [Obsidian](https://obsidian.md): the clean base and special
 | `- [ ]` | To do | empty box |
 | `- [x]` | Done | check (struck through in grey) |
 | `- [v]` | Reviewed | double check in sky blue, no box (text struck through in grey) |
-| `- [/]` | In progress | half-filled box (purple) |
+| `- [/]` | In progress | half-filled box (yellow) |
 | `- [-]` | Cancelled | dash (struck through in grey) |
 | `- [>]` | Forwarded | paper plane (grey) |
 | `- [<]` | Scheduled | calendar (grey) |
@@ -183,7 +183,7 @@ Tema personal para [Obsidian](https://obsidian.md): la base estéticamente limpi
 | `- [ ]` | Pendiente | casilla vacía |
 | `- [x]` | Hecho | check (tachado en gris) |
 | `- [v]` | Revisado | doble check azul cielo, sin caja (texto tachado en gris) |
-| `- [/]` | En curso | casilla a medio rellenar (morado) |
+| `- [/]` | En curso | casilla a medio rellenar (amarillo) |
 | `- [-]` | Cancelado | guion (tachado en gris) |
 | `- [>]` | Reenviado | avión de papel (gris) |
 | `- [<]` | Programado | calendario (gris) |
@@ -328,7 +328,7 @@ Tema persoal para [Obsidian](https://obsidian.md): a base estéticamente limpa e
 | `- [ ]` | Pendente | caixa baleira |
 | `- [x]` | Feito | visto (riscado en gris) |
 | `- [v]` | Revisado | dobre visto azul ceo, sen caixa (texto riscado en gris) |
-| `- [/]` | En curso | caixa medio enchida (morado) |
+| `- [/]` | En curso | caixa medio enchida (amarelo) |
 | `- [-]` | Cancelado | guión (riscado en gris) |
 | `- [>]` | Reenviado | avión de papel (gris) |
 | `- [<]` | Programado | calendario (gris) |

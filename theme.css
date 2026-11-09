@@ -2094,16 +2094,16 @@ li[data-task='v'] > p > input:checked {
   mask-repeat: no-repeat;
 }
 
-/* [/] En curso — la mitad rellena con el morado de Amethyst (el de los checkboxes) */
+/* [/] En curso — la mitad rellena con el amarillo de Amethyst (el de los H3) */
 input[data-task='/']:checked,
 li[data-task='/'] > input:checked,
 li[data-task='/'] > p > input:checked {
-  border-color: var(--checkbox-color);
+  border-color: var(--to-yellow);
 }
 input[data-task='/']:checked:after,
 li[data-task='/'] > input:checked:after,
 li[data-task='/'] > p > input:checked:after {
-  background-color: var(--checkbox-color);
+  background-color: var(--to-yellow);
 }
 
 /* ─────────────────────────────────────────
