@@ -1995,7 +1995,7 @@ body {
   --to-code: #ef6f6c;                           /* rojizo para `código en línea` */
   --to-code-bg: rgba(135, 131, 120, 0.18);
   --to-link-hover-text: #fff;
-  --to-done: var(--text-faint);                 /* gris de Things */
+  --to-done: var(--text-muted);                 /* gris suave: tachado legible */
   --to-transition: 350ms ease-in-out;
 
   /* Acento interactivo de Things (checkboxes, selección, botones) en morado */
@@ -2150,8 +2150,9 @@ body span.cm-em.cm-formatting-em {
 
 /* ─────────────────────────────────────────
    TACHADOS
-   Solo tareas completadas normales [x] / [X] y revisadas [v];
+   Solo tareas completadas normales [x] / [X], revisadas [v] y canceladas [-];
    los checkboxes especiales de Things no se tocan.
+   Gris suave (--to-done = --text-muted) para que se pueda releer.
    ───────────────────────────────────────── */
 body .markdown-preview-view ul > li.task-list-item.is-checked:is([data-task='x'], [data-task='X'], [data-task='v']),
 body .markdown-source-view.mod-cm6 .HyperMD-task-line:is([data-task='x'], [data-task='X'], [data-task='v']) {
@@ -2161,17 +2162,25 @@ body .markdown-source-view.mod-cm6 .HyperMD-task-line:is([data-task='x'], [data-
   transition: color var(--to-transition);
 }
 
+/* [-] Cancelado: mismos selectores que Things para poder pisarlo */
+body:not(.tasks) .markdown-preview-view ul li[data-task='-'].task-list-item.is-checked,
+body:not(.tasks) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task='-']),
+body:not(.tasks) li[data-task='-'].task-list-item.is-checked {
+  color: var(--to-done);
+  text-decoration: line-through solid var(--to-done) 1px;
+}
+
 /* Subtareas sin completar dentro de una completada: color normal */
 body .markdown-preview-view ul > li.task-list-item.is-checked ul > li:not(.is-checked) {
   color: var(--text-normal);
 }
 
-/* ~~tachado~~ suelto */
+/* ~~tachado~~ suelto: atenuado suave, opacidad completa al pasar el ratón */
 del,
 s,
 .cm-strikethrough {
   text-decoration-color: var(--to-done);
-  opacity: 0.6;
+  opacity: 0.8;
   transition: opacity var(--to-transition);
 }
 
